@@ -5,11 +5,12 @@ A responsive multi-step loan contract web application built using HTML, CSS, Jav
 - CSS3
 - JavaScript
 - jQuery
-- XLSX.js
+- Google sheets
   
 ## Run Locally
 1. Clone the repository
-2. Open index.html
+2. Open contract.html and replace action link with your own google sheet link
+3. Open index.html
 
 ## Future Improvements
 - Database integration
