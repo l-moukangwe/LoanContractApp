@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="../css/contract.css">
+</head>
+
+<body>
+    <h1>CASH SOLUTIONS CREDIT AGREEMENT APPLICATION FORM</h1>
+    <p>In terms of Section 92 and 93 of the National Credit Act 34 of 2005 (NCA)</p>
+
+
+    <form id="myForm"
+        action="https://script.google.com/macros/s/AKfycbzbTDQszXI7-DVYUwWK4wBKui_6yC_Z23ZPcD1RRSpibxUXWY0_MlsK2WOu2vqZwid1/exec"
+        method="POST">
+        <h2>APPLICATION DETAILS: Main Applicant</h2>
+
+        <div class="form-section" id="section-1">
+            <label>Surname:</label>
+            <input type="text" name="surname" id="surname" placeholder="Your Surname" required>
+
+            <label>First Names:</label>
+            <input type="text" name="first_names" id="first_names" placeholder="Your First Names" required>
+
+            <label>Initials:</label>
+            <input type="text" name="initials" id="initials" placeholder="Your Initials" required>
+
+            <label>Date of Birth:</label>
+            <input type="date" name="date_of_birth" id="date_of_birth" required>
+
+            <label>ID Number:</label>
+            <input type="text" name="id_number" id="id_number" placeholder="Id Number" required>
+
+            <label>Phone Number:</label>
+            <input type="tel" name="phone_number" id="phone_number" placeholder="Phone Number" required>
+
+            <label>Work Phone:</label>
+            <input type="tel" name="work_phone" id="work_phone" placeholder="Work Phone">
+
+            <label>E-Mail:</label>
+            <input type="email" name="email" id="email" placeholder="E-Mail" required>
+
+            <label>Physical Address:</label>
+            <input type="text" name="physical_address" id="physical_address" placeholder="Physical Address" required>
+
+            <label>City/Town:</label>
+            <input type="text" name="city/town" id="city_town" placeholder="City/Town" required>
+
+            <label>Suburb:</label>
+            <input type="text" name="suburb" id="suburb" placeholder="Suburb" required>
+
+            <label>Province:</label>
+            <select name="province" id="province" required>
+                <option value="">---Select Province---</option>
+                <option value="Eastern Cape">Eastern Cape</option>
+                <option value="Free State">Free State</option>
+                <option value="Gauteng">Gauteng</option>
+                <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                <option value="Limpopo">Limpopo</option>
+                <option value="Mpumalanga">Mpumalanga</option>
+                <option value="Northern Cape">Northern Cape</option>
+                <option value="North West">North West</option>
+                <option value="Western Cape">Western Cape</option>
+            </select>
+
+            <div class="button-container">
+                <button type="button" class="nav-btn prev-btn" id="prevBtn" onclick="nextPrev(-1)">Back</button>
+                <button type="button" class="nav-btn next-btn" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+
+        <div class="form-section" id="section-2">
+            <h3>BANKING DETAILS</h3>
+            <label>Banking Institution:</label>
+            <input type="text" name="bank_name" id="bank_name" placeholder="Bank Name" required>
+
+            <label>Branch Code:</label>
+            <input type="text" name="code" id="branch_code" placeholder="Branch Code" required>
+
+            <label>Account No:</label>
+            <input type="text" name="account_number" id="account_number" placeholder="Acc Number" required>
+
+            <label>Account Type:</label>
+            <input type="text" name="account_type" id="account_type" placeholder="Acc Type" required>
+
+            <label>Account Holder:</label>
+            <input type="text" name="account_holder" id="account_holder" placeholder="Acc Holder" required>
+
+            <div class="button-container">
+                <button type="button" class="nav-btn prev-btn" id="prevBtn" onclick="nextPrev(-1)">Back</button>
+                <button type="button" class="nav-btn next-btn" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+
+        <div class="form-section" id="section-3">
+            <h3>EMPLOYMENT DETAILS: Main Applicant</h3>
+            <label>Are you self-employed:
+                Yes <input type="radio" name="self_employed" value="Yes" id="self_employed_yes">
+                No <input type="radio" name="self_employed" value="No" id="self_employed_no">
+            </label>
+
+            <label>Occupation:</label>
+            <input type="text" name="occupation" id="occupation" placeholder="Your Occupation">
+
+            <label>Name of Employer:</label>
+            <input type="text" name="employer" id="employer" placeholder="Your Employer">
+
+            <label>Employer's Contact:</label>
+            <input type="tel" name="employer_phone" id="employer_phone" placeholder="Employer's Contact">
+
+            <label>Employer's Address:</label>
+            <input type="text" name="employer_address" id="employer_address" placeholder="Employer's Address">
+
+            <label>Department:</label>
+            <input type="text" name="department" id="department" placeholder="Your Department">
+
+            <label>Date joined Employer:</label>
+            <input type="date" name="date_joined_employer" id="date_joined_employer">
+
+            <div class="button-container">
+                <button type="button" class="nav-btn prev-btn" id="prevBtn" onclick="nextPrev(-1)">Back</button>
+                <button type="button" class="nav-btn next-btn" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+        <div class="form-section" id="section-4">
+            <h2>INCOME OF APPLICANT</h2>
+            <table>
+                <tr>
+                    <th>Income</th>
+                    <th>Main Applicant</th>
+                    <th>Spouse</th>
+                </tr>
+                <tr>
+                    <td>Payroll Income after Deductions</td>
+                    <td class="IncomeMain"><input type="text" name="income_main_applicant_input" id="income_main"
+                            placeholder="Income" onkeyup="calculateIncomeTotals()"></td>
+                    <td class="IncomeSpouse"><input type="text" name="income_spouse_input" id="income_spouse"
+                            placeholder="Income" onkeyup="calculateIncomeTotals()"></td>
+                </tr>
+                <tr>
+                    <td>Overtime</td>
+                    <td class="IncomeMain"><input type="text" name="overtime_main_applicant" id="overtime_main"
+                            placeholder="Overtime" onkeyup="calculateIncomeTotals()"></td>
+                    <td class="IncomeSpouse"><input type="text" name="overtime_spouse" id="overtime_spouse"
+                            placeholder="Overtime" onkeyup="calculateIncomeTotals()"></td>
+                </tr>
+                <tr>
+                    <td>Commission</td>
+                    <td class="IncomeMain"><input type="text" name="commission_main_applicant" id="commission_main"
+                            placeholder="Commission" onkeyup="calculateIncomeTotals()"></td>
+                    <td class="IncomeSpouse"><input type="text" name="commission_spouse" id="commission_spouse"
+                            placeholder="Commission" onkeyup="calculateIncomeTotals()"></td>
+                </tr>
+                <tr>
+                    <td>Other Income</td>
+                    <td class="IncomeMain"><input type="text" name="other_income_main_applicant" id="other_income_main"
+                            placeholder="Other Income" onkeyup="calculateIncomeTotals()"></td>
+                    <td class="IncomeSpouse"><input type="text" name="other_income_spouse" id="other_income_spouse"
+                            placeholder="Other Income" onkeyup="calculateIncomeTotals()"></td>
+                </tr>
+                <tr>
+                    <td>Car Allowance</td>
+                    <td class="IncomeMain"><input type="text" name="car_allowance_main_applicant"
+                            id="car_allowance_main" placeholder="Car Allowance" onkeyup="calculateIncomeTotals()"></td>
+                    <td class="IncomeSpouse"><input type="text" name="car_allowance_spouse" id="car_allowance_spouse"
+                            placeholder="Car Allowance" onkeyup="calculateIncomeTotals()"></td>
+                </tr>
+                <tr>
+                    <td>Total Income</td>
+                    <td>
+                        <input type="hidden" name="totalIncome_mainApplicant" id="hiddenTotalMain" value="">
+                        <span id="totalIncomeMain"></span>
+                    </td>
+                    <td>
+                        <input type="hidden" name="totalIncome_spouse" id="hiddenTotalSpouse" value="">
+                        <span id="totalIncomeSpouse"></span>
+                    </td>
+                </tr>
+            </table>
+            <div class="button-container">
+                <button type="button" class="nav-btn prev-btn" id="prevBtn" onclick="nextPrev(-1)">Back</button>
+                <button type="button" class="nav-btn next-btn" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+
+        <div class="form-section" id="section-5">
+            <h2>EXPENSES OF APPLICANT</h2>
+            <table>
+                <tr>
+                    <th>Expenses</th>
+                    <th>Main Applicant</th>
+                    <th>Spouse</th>
+                </tr>
+                <tr>
+                    <td>Bond Repayments/Rental</td>
+                    <td class="expenseMain"><input type="text" name="rental_main_applicant"
+                            placeholder="Bond Repayment/Rental" onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="rental_spouse"
+                            placeholder="Bond Repayments/Rental" onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Other Credit/Loan Installments</td>
+                    <td class="expenseMain"><input type="text" name="othe_loan_main_applicant"
+                            placeholder="Other Credit" onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="other_loan_spouse" placeholder="Other Credit"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Water & Electricity</td>
+                    <td class="expenseMain"><input type="text" name="water_and_electricity_main_applicant"
+                            placeholder="Water & Electricity" onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="water_and_electricity_spouse"
+                            placeholder="Water & Electricity" onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Insurance</td>
+                    <td class="expenseMain"><input type="text" name="insurance_main_applicant" placeholder="Insurance"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="insurance_spouse" placeholder="Insurance"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Children Maintenance</td>
+                    <td class="expenseMain"><input type="text" name="children_maintanance_main_applicant"
+                            placeholder="Children Maintanance" onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="children_maintanance_spouse"
+                            placeholder="Children Maintanance" onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Clothing</td>
+                    <td class="expenseMain"><input type="text" name="clothing_main_applicant" placeholder="Clothing"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="clothing_spouse" placeholder="Clothing"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Telephone</td>
+                    <td class="expenseMain"><input type="text" name="telephone_main_applicant" placeholder="Telephone"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="telephone_spouse" placeholder="Telephone"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>TV/Rental/DSTV</td>
+                    <td class="expenseMain"><input type="text" name="tv_main_applicant" placeholder="TV"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="tv_spouse" placeholder="TV"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Vehicle Installment</td>
+                    <td class="expenseMain"><input type="text" name="vehicle_main_applicant"
+                            placeholder="Vehicle Installment" onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="vehicle_spouse" placeholder="Vehicle Installment"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Groceries/Liquor/Cigarette</td>
+                    <td class="expenseMain"><input type="text" name="groceries_main_applicant" placeholder="Groceries"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="groceries_spouse" placeholder="Groceries"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Domestic Wages</td>
+                    <td class="expenseMain"><input type="text" name="domestic_wages_main_applicant"
+                            placeholder="Domestic Wages" onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="domestic_wages_spouse"
+                            placeholder="Domestic Wages" onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Education</td>
+                    <td class="expenseMain"><input type="text" name="education_main_applicant" placeholder="Education"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="education_spouse" placeholder="Education"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Entertainment/Subscriptions</td>
+                    <td class="expenseMain"><input type="text" name="entertainment_main_applicant"
+                            placeholder="Entertainment" onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="entertainment_spouse" placeholder="Entertainment"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Cell Phone</td>
+                    <td class="expenseMain"><input type="text" name="cell_phone_main_applicant" placeholder="Cell Phone"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="cell_phone_spouse" placeholder="Cell Phone"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+                <tr>
+                    <td>Transport Expense</td>
+                    <td class="expenseMain"><input type="text" name="transport_main_applicant" placeholder="Transport"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                    <td class="expenseSpouse"><input type="text" name="transport_spouse" placeholder="Transport"
+                            onkeyup="calculateExpenseTotals()"> </td>
+                </tr>
+
+                <tr>
+                    <td>Total Expense</td>
+                    <td><input type="hidden" name="totalExpense_mainApplicant" id="hiddentotalExpenseMain"
+                            value=""><span id="totalExpenseMain"></span> </td>
+                    <td><input type="hidden" name="totalExpense_spouse" id="hiddentotalExpenseSpouse" value=""><span
+                            id="totalExpanseSpouse"></span> </td>
+                </tr>
+                <!-- Add more income and expense categories -->
+            </table>
+            <div class="button-container">
+                <button type="button" class="nav-btn prev-btn" id="prevBtn" onclick="nextPrev(-1)">Back</button>
+                <button type="button" class="nav-btn next-btn" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+        <!-- Section 6 -->
+        <div class="form-section" id="section-6">
+            <h2>PRE-AGREEMENT STATEMENT AND QUOTATION FOR SMALL AND INTERMEDIATE CREDIT AGREEMENT (SECTION A)</h2>
+            <p>In terms of Section 92 and 93 of the National Credit Act of 2005 (NCA)</p>
+
+            <h3>CREDIT PROVIDER DETAILS</h3>
+            <!-- Add more fields for credit provider details -->
+
+            <h3>Loan Officer: <input type="text" name="loan_officer" id="LoanOfficer" placeholder="Loan Officer" /></h3>
+            <p>Name of Credit Receiver: <input type="text" name="credit_receiver" placeholder="Credit Receiver Name"
+                    required></p>
+            <!-- Add more fields for credit receiver details -->
+
+            <h2>PART A: AMOUNT ADVANCED</h2>
+            <label>Credit Advanced (Capital): R
+                <input type="text" name="credit_advanced" id="creditAdvance" value="" placeholder="Credit Advanced"
+                    required onkeyup="calculateLoan()" />
+            </label>
+            <label>Initiation Fee (Max 10% of credit advanced): R
+                <input type="hidden" name="initiation_fee" id="hiddenInitalisedFeeRate" required>
+                <span id="initialFeeDisplay" class="feeRate"></span>
+            </label>
+            <label>Monthly Service Fee (5%): R
+                <input type="hidden" name="monthly_service_fee" id="hiddenMonthlyFee" required>
+                <span id="monthlyFeeDisplay"></span>
+            </label>
+            <label>Rate Being offered at advanced rate: R
+                <input type="hidden" name="rate_offered" id="hiddenRateOffered" required>
+                <span id="rateBeingOfferedDisplay"></span>
+            </label>
+
+            <h2>PART B: INSTALLMENT PAYABLE</h2>
+            <label>Total Credit: R
+                <input type="hidden" id="hiddenTotalCredit" name="credit" required>
+                <span id="totalCreditDisplay"></span>
+            </label>
+            <label>Number of Installments:</label>
+            <select name="number_of_installments" class="NumInstallments" id="NumOfinstallments"
+                onkeyup="calculateLoan()">
+                <option value="">---Select Months---</option>
+                <option value="1">1 Month</option>
+                <option value="2">2 Months</option>
+                <option value="3">3 Months</option>
+                <option value="4">4 Months</option>
+                <option value="5">5 Months</option>
+                <option value="6">6 Months</option>
+            </select>
+            <label>Frequency:</label>
+            <input type="text" name="frequency" placeholder="Frequency" required>
+            <label>Terms of Loan: <input type="hidden" name="terms_of_loan" id="hiddenTermsOfLoan" required><span
+                    id="termsOfLoanDisplay"></span></label>
+
+            <!-- Add more fields for installment payable details -->
+
+            <h2>PART C: TOTAL COST AND INTEREST</h2>
+            <label>Monthly Interest Rate: <input type="text" name="monthly_interest_rate"
+                    placeholder="Monthly Interest Rate" required></label>
+            <label>Interest Type:</label>
+            <select name="interest_type" class="InterestType">
+                <option value="">---Select Interest Type---</option>
+                <option value="Compound Interest">Compound Interest</option>
+                <option value="Fixed Interest">Fixed Interest</option>
+            </select>
+            <label>Total Interest Payable: <input type="hidden" name="interest_payable" id="hiddenTotalInterest"
+                    required><span id="totalInterestDisplay"></span></label>
+            <label>Total Installments: <input type="hidden" name="total_installments" id="hiddenTotalInstallment"
+                    required><span id="totalInstallmentsDisplay"></span></label>
+            <!-- Add more fields for total cost and interest details -->
+
+            <!-- ... Add the rest of the form fields ... -->
+
+            <h2>PART D: REPAYMENT ARRANGEMENTS AND DECLARATION</h2>
+            <label>Commencing Date:</label>
+            <input type="date" name="commencing_date" placeholder="Commencing Date" required>
+            <label>Monthly Installment of: <input type="hidden" name="monthly_installment" id="hiddenMonthlyInstallment"
+                    required><span id="monthlyInstallmentDisplay"></span></label>
+
+
+            <!---<p class="sign">Signature:
+            <p class="signature"></p>
+            </p>---->
+
+            <div class="button-container">
+                <button type="button" class="nav-btn prev-btn" id="prevBtn" onclick="nextPrev(-1)">Back</button>
+                <button type="SUBMIT" class="nav-btn next-btn" id="nextBtn" onclick="submitForm()">Submit</button>
+            </div>
+        </div>
+
+    </form>
+
+    <script src="../js/contract.js">
+
+    </script>
+
+</body>
+
+</html>

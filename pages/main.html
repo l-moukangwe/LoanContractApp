@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+    <meta charset="UTF-8" />
+    <link rel="Stylesheet" href="/css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?
+    family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+</head>
+
+<body>
+    <!----------------------------------------HEADER----------------------------------------------------------->
+    <header>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="side-bar">
+            <!--close button---->
+            <div class="close-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <!--side-bar_items-->
+            <div class="menu">
+                <div class="item"><a href="#"><i class="fas fa-info"></i>About</a></div>
+                <div class="item"><a href="contract.html"><i class="fas fa-pen"></i>Contract Details</a></div>
+            </div>
+        </div>
+    </header>
+
+    <!--------------------------------------------------SECTION---------------------------------------------------------->
+    <main>
+        <section>
+            <div class="navbar">
+                <div class="logo">
+                    <h1>LSDTech</h1>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="login.html"><img src="../icons/log_in_icon2.png"></br> Login</a></li>
+                        <li><a href="signup.html"><img src="../icons/log in icon.png"></br> Sign up</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+
+    <!----FOOTER ------------------------------------------------------------------------------------------------------->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download our app.</h3>
+                    <div class="app-logo">
+                        <img src="Logos/Play store 2.jpg">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <h1>LSDTech</h1>
+                    <p>Turning Problems Into Solutions</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href=""><img src="Icons/Facebook.png" width="20px"> Facebook</a></li>
+                        <li><a href=""><img src="Icons/Twitter.png" width="20px"> Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Jquery CDN link-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //jquery for expand and collapse the sidebar
+            $('.menu-btn').click(function () {
+                $('.side-bar').addClass('active');
+                $('.menu-btn').css("visibility", "hidden");
+            });
+            //for close button
+            $('.close-btn').click(function () {
+                $('.side-bar').removeClass('active');
+                $('.menu-btn').css("visibility", "visible");
+            })
+        })
+    </script>
+
+</body>
+
+</html>
